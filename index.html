@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BTC websites</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script type="text/javascript">
+
+        var sites=[
+            {
+                "name":"Coinmarketcap",
+                "url":"http://coinmarketcap.com/",
+                "type":"导航",
+                "desc":"所有数字货币的价格、发行量、总市值、成交量列表"
+            },
+            {
+                "name":"Cryptocompare",
+                "url":"https://www.cryptocompare.com/",
+                "type":"导航",
+                "desc":"多币种涨幅统计，市场分析"
+            },
+            {
+                "name":"Sosobtc",
+                "url":"https://www.sosobtc.com/",
+                "type":"导航",
+                "desc":"中文币圈门户网站"
+            },
+            {
+                "name":"Btc123",
+                "url":"https://www.btc123.com/",
+                "type":"导航",
+                "desc":"中文比特币导航网站"
+            },
+            {
+                "name":"bitcoin",
+                "url":"https://bitcoin.org/en/",
+                "type":"比特币",
+                "desc":"比特币的官方网站，可获取大量资源，包括Qt钱包软件、中本聪原始论文等。"
+            },
+            {
+                "name":"Bitcoin wiki",
+                "url":"https://en.bitcoin.it/wiki/Main_Page",
+                "type":"比特币",
+                "desc":"比特币的wiki页面"
+            },
+    
+        ];
+
+    </script>
+<div id="app">
+    <h3 class="text-center">区块链相关网站汇总</h3>
+
+    <div class="text-center">
+        <table border="1" cellpadding="0"  cellspacing="0" id="sitemap" class="table">
+        <tr>
+        <th>名称</th>
+        <th>站点URL</th>
+        <th>类别</th>
+        <th>描述</th>
+        </tr>
+
+        </table>
+
+    </div>
+
+</div>
+<script type="text/javascript">
+var sitemapTable=document.getElementById("sitemap");
+
+for(var site of sites){
+      var tr=document.createElement("tr");
+      var td1=document.createElement("td");
+      var td2=document.createElement("td");
+      var td3=document.createElement("td");
+      var td4=document.createElement("td");
+      td1.innerHTML=site.name;
+      td2.innerHTML="<a href='"+site.url+"'  target='_blank'>"+site.url+"</a>";
+      td3.innerHTML=site.type;
+      td4.innerHTML=site.desc;
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      tr.appendChild(td4);
+      sitemapTable.appendChild(tr);
+}
+
+
+
+
+
+</script>
+</body>
+</html>
