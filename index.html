@@ -3,181 +3,26 @@
 <head>
     <meta charset="utf-8">
     <title>BTC websites</title>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <style media="screen">
+    *{
+        font-family: 微软雅黑;
+    }
     tr:hover{
         color: red;
         background: #001;
     }
 </style>
 <body>
-
-    <script type="text/javascript">
-
-        var sites=[
-            {
-                "name":"Coinmap",
-                "url":"https://coinmap.org/",
-                "type":"<b>统计</b>",
-                "desc":"全球接受比特币支付的商家地图分布"
-            },
-            {
-                "name":"blockchain",
-                "url":"https://blockchain.info/",
-                "type":"<b>统计</b>",
-                "desc":"比特币网络的数据统计与图表、区块链浏览器与查询"
-            },
-            {
-                "name":"bitcoincharts",
-                "url":"http://bitcoincharts.com/markets/",
-                "type":"<b>统计</b>",
-                "desc":"比特币价格的全球汇率统计与图表"
-            },
-            {
-                "name":"bitcoinwatch",
-                "url":"http://www.bitcoinwatch.com/",
-                "type":"<b>统计</b>",
-                "desc":"比特币网络统计与各大交易所统计"
-            },
-            {
-                "name":"qukuai",
-                "url":"http://qukuai.com/",
-                "type":"<b>统计</b>",
-                "desc":"比特币和莱特币区块浏览器"
-            },
-            {
-                "name":"segwit",
-                "url":"http://litecoin-segwit.info/",
-                "type":"<b>统计</b>",
-                "desc":"莱特币segwit激活进程"
-            },
-            {
-                "name":"btc",
-                "url":"https://btc.com/",
-                "type":"<b>统计</b>",
-                "desc":"中文，比特币区块浏览及网络统计"
-            },
-
-            {
-                "name":"coin",
-                "url":"https://coin.dance/",
-                "type":"<b>统计</b>",
-                "desc":"比特币网络统计"
-            },
-            {
-                "name":"btc",
-                "url":"https://bitnodes.21.co/",
-                "type":"<b>统计</b>",
-                "desc":"全球比特币节点分布"
-            },
-            {
-                "name":"blockmeta",
-                "url":"https://blockmeta.com/",
-                "type":"<b>统计</b>",
-                "desc":"比特币网络统计，包括算力、地址、节点等"
-            },
-            {
-                "name":"bitcoinclock",
-                "url":"http://bitcoinclock.com/",
-                "type":"<b>统计</b>",
-                "desc":"比特币产量减半时间表，第三次减半时间为2020-6-21"
-            },
-            {
-                "name":"litecoinblockhalf",
-                "url":"http://litecoinblockhalf.com/",
-                "type":"<b>统计</b>",
-                "desc":"莱特币减半倒计时，每840000个区块减半一次，第二次减半时间为2019-8-19"
-            },
-
-            {
-                "name":"idgui",
-                "url":"http://www.idgui.com/L/index.htm",
-                "type":"<b>统计</b>",
-                "desc":"比特币莱特币减半时间表，中文"
-            },
-
-            {
-                "name":"blocktrail",
-                "url":"https://www.blocktrail.com/",
-                "type":"<b>统计</b>",
-                "desc":"比特币统计、版本查询，被比特大陆BitMain收购"
-            },
-            {
-                "name":"bitcoincore",
-                "url":"https://bitcoincore.org",
-                "type":"<b>统计</b>",
-                "desc":"Bitcoin Core开发者官网"
-            },
-            {
-                "name":"Coinmarketcap",
-                "url":"http://coinmarketcap.com/",
-                "type":"导航",
-                "desc":"所有数字货币的价格、发行量、总市值、成交量列表"
-            },
-            {
-                "name":"Cryptocompare",
-                "url":"https://www.cryptocompare.com/",
-                "type":"导航",
-                "desc":"多币种涨幅统计，市场分析"
-            },
-            {
-                "name":"Sosobtc",
-                "url":"https://www.sosobtc.com/",
-                "type":"导航",
-                "desc":"中文币圈门户网站"
-            },
-            {
-                "name":"Btc123",
-                "url":"https://www.btc123.com/",
-                "type":"导航",
-                "desc":"中文比特币导航网站"
-            },
-            {
-                "name":"bitcoin",
-                "url":"https://bitcoin.org/en/",
-                "type":"比特币",
-                "desc":"比特币的官方网站，可获取大量资源，包括Qt钱包软件、中本聪原始论文等。"
-            },
-            {
-                "name":"Bitcoin wiki",
-                "url":"https://en.bitcoin.it/wiki/Main_Page",
-                "type":"比特币",
-                "desc":"比特币的wiki页面"
-            },
-
-            {
-                "name":"Coindesk",
-                "url":"http://www.coindesk.com/",
-                "type":"比特币",
-                "desc":"英文，比特币及区块链相关新闻、比特币价格指数和相关研究报告。"
-            },
-            {
-                "name":"巴比特",
-                "url":"http://www.8btc.com/",
-                "type":"比特币",
-                "desc":"中国知名数字货币、区块链新闻网站、在线社区"
-            },
-
-            {
-                "name":"币看",
-                "url":"https://www.btckan.com/",
-                "type":"比特币",
-                "desc":"币看，数字货币资讯网站"
-            },
-
-            {
-                "name":"litecoinlearner",
-                "url":"http://www.litecoinlearner.com/",
-                "type":"官网",
-                "desc":"比特币和莱特币学习资源"
-            },
-        ];
-
-    </script>
+<script type="text/javascript" src="./data.js"></script>
 <div id="app">
-    <h3 class="text-center">区块链相关网站汇总</h3>
+    <h3 class="text-center" style="font-family:Comic Sans MS"><span style="color:gray">BTC-ZH.COM</span>区块链相关网站汇总</h3>
 
     <div style="padding-left:10px">
         <table border="1" cellpadding="0"  cellspacing="0" id="sitemap" class="table">
@@ -212,15 +57,10 @@ for(var site of sites){
       tr.appendChild(td4);
       sitemapTable.appendChild(tr);
 }
-
-
-
-
-
 </script>
 
 <footer class="text-center">
-    @copyright btc-zh.com | 以上数据均来自网络，非商业用途，如有侵权，请通知删除
+    @copyright 2017-2099 btc-zh.com | 以上数据均来自网络，非商业用途，如有侵权，请通知删除
 </footer>
 </body>
 </html>
