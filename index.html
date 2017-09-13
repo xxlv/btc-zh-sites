@@ -32,9 +32,9 @@
         })
     },3000);
     $.get("http://www.btc-zh.com/lastModify.json",function(data){
-        data=JSON.parse(data)
+        // data=JSON.parse(data)
         lastModifyTime=data.last_modity_time;
-        document.getElementById("last_modity_time").innerHTML="<span style='color:red'>"+ lastModifyTime+"</span>";
+        document.getElementById("last_modity_time").innerHTML="<span style='color:red'>"+new Date(parseInt(lastModifyTime)).toLocaleString()+"</span>";
     });
 
 </script>
