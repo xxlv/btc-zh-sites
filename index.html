@@ -18,27 +18,34 @@
     enable_page_level_ads: true
   });
 </script>
-
-
 <script type="text/javascript">
     var priceAPI="http://47.94.254.53?proxy=https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny";
 </script>
 <script type="text/javascript">
     var price=0;
     var loadPrice=window.setInterval(function(){
+
         $.get(priceAPI,function(data){
             data=JSON.parse(data);
             price=data.ticker['buy']
             document.getElementById("price").innerHTML="比特币实时价格: <span style='color:red'>"+price+"</span>￥";
         })
     },3000);
+    $.get("http://www.btc-zh.com/lastModify.json",function(data){
+        data=JSON.parse(data)
+        lastModifyTime=data.last_modity_time;
+        document.getElementById("last_modity_time").innerHTML="<span style='color:red'>"+ lastModifyTime+"</span>";
+    });
+
 </script>
 </head>
 
 <style media="screen">
-
     *{
         font-family: 微软雅黑;
+    }
+    #last_modity_time{
+        color: gray;
     }
     table{
         border: 0;
@@ -82,12 +89,25 @@
 
 </script>
 <div id="app" class="center-block">
-    <a href="branding" href="http://www.btc-zh.com" title="BTC zh">
-        <img src="./logo.png">
-    </a>
+
+    <div class="header container">
+        <div class="row">
+            <div class="col-md-2">
+                <a href="branding" href="http://www.btc-zh.com" title="BTC zh">
+                    <img src="./logo.png">
+                </a>
+            </div>
+            <div class="col-md-10">
+                <h3>更丰富的页面即将展现！</h3>
+                <small>机器人Candy自动抓取，上次修改时间: <span id="last_modity_time">暂未查询到此信息</span></small>
+            </div>
+
+        </div>
+
+    </div>
     <ul id="mainTab" class="nav nav-tabs"></ul>
     <div style="padding-left:10px">
-        <div class="title" style="margin:10px 0px;">
+        <div class="title" style="margin:10px 0px;"  data-toggle="tooltip" title="数据来自www.okcoin.cn" >
             <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
             <span id="price">正在查询中...</span>
         </div>
