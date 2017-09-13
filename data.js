@@ -1,229 +1,237 @@
+var mapping=new Map();
+mapping.set("navigation","导航");
+mapping.set("trade","交易");
+mapping.set("statistics","统计");
+mapping.set("BTC","比特币");
+mapping.set("official","官网站点");
+
+
 var sites=[
     {
         "name":"btc-zh",
         "url":"http://www.btc-zh.com",
-        "type":"汇总",
+        "type":"navigation",
         "desc":"<b>汇总区块链相关网站、定期更新、建议收藏</b>"
     },
     {
         "name":"火币网",
         "url":"http://www.huobi.com",
-        "type":"交易",
+        "type":"trade",
         "desc":"比特币等多种币交易"
     },
     {
         "name":"P网",
         "url":"http://www.poloniex.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"P网"
     },
 
     {
         "name":"B网",
         "url":"http://www.bittrex.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"B网"
     },
     {
         "name":"bitfinex",
         "url":"http://www.bitfinex.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"bitfinex"
     },
     {
         "name":"bitmex",
         "url":"http://www.bitmex.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"期货"
     },
     {
         "name":"e网",
         "url":"http://www.btc-e.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"e网"
     },
     {
         "name":"K网",
         "url":"http://www.kraken.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"kraken"
     },
     {
         "name":"gdax",
         "url":"http://www.gdax.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"gdax"
     },
     {
         "name":"bitstamp",
         "url":"http://www.bitstamp.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"bitstamp"
     },
     {
         "name":"gemini",
         "url":"http://www.gemini.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"gemini"
     },
     {
         "name":"quoine",
         "url":"http://www.quoine.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"quoine"
     },
     {
         "name":"yobit",
         "url":"http://www.yobit.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"yobit"
     },
     {
         "name":"coincheck",
         "url":"http://www.coincheck.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"coincheck"
     },
     {
         "name":"coinbase",
         "url":"http://www.coinbase.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"coinbase"
     },
     {
         "name":"itbit",
         "url":"http://www.itbit.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"itbit"
     },
     {
         "name":"localbitcoins",
         "url":"http://www.localbitcoins.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"全球最大的比特币场外交易场所"
     },
     {
         "name":"bitkan",
         "url":"http://www.bitkan.com/",
-        "type":"交易",
+        "type":"trade",
         "desc":"国内场外交易"
     },
 
     {
         "name":"Coinmap",
         "url":"https://coinmap.org/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"全球接受比特币支付的商家地图分布"
     },
     {
         "name":"blockchain",
         "url":"https://blockchain.info/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"比特币网络的数据统计与图表、区块链浏览器与查询"
     },
     {
         "name":"bitcoincharts",
         "url":"http://bitcoincharts.com/markets/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"比特币价格的全球汇率统计与图表"
     },
     {
         "name":"bitcoinwatch",
         "url":"http://www.bitcoinwatch.com/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"比特币网络统计与各大交易所统计"
     },
     {
         "name":"qukuai",
         "url":"http://qukuai.com/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"比特币和莱特币区块浏览器"
     },
     {
         "name":"segwit",
         "url":"http://litecoin-segwit.info/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"莱特币segwit激活进程"
     },
     {
         "name":"btc",
         "url":"https://btc.com/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"中文，比特币区块浏览及网络统计"
     },
 
     {
         "name":"coin",
         "url":"https://coin.dance/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"比特币网络统计"
     },
     {
         "name":"btc",
         "url":"https://bitnodes.21.co/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"全球比特币节点分布"
     },
     {
         "name":"blockmeta",
         "url":"https://blockmeta.com/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"比特币网络统计，包括算力、地址、节点等"
     },
     {
         "name":"bitcoinclock",
         "url":"http://bitcoinclock.com/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"比特币产量减半时间表，第三次减半时间为2020-6-21"
     },
     {
         "name":"litecoinblockhalf",
         "url":"http://litecoinblockhalf.com/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"莱特币减半倒计时，每840000个区块减半一次，第二次减半时间为2019-8-19"
     },
 
     {
         "name":"idgui",
         "url":"http://www.idgui.com/L/index.htm",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"比特币莱特币减半时间表，中文"
     },
 
     {
         "name":"blocktrail",
         "url":"https://www.blocktrail.com/",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"比特币统计、版本查询，被比特大陆BitMain收购"
     },
     {
         "name":"bitcoincore",
         "url":"https://bitcoincore.org",
-        "type":"<b>统计</b>",
+        "type":"statistics",
         "desc":"Bitcoin Core开发者官网"
     },
     {
         "name":"Coinmarketcap",
         "url":"http://coinmarketcap.com/",
-        "type":"导航",
+        "type":"navigation",
         "desc":"所有数字货币的价格、发行量、总市值、成交量列表"
     },
     {
         "name":"Cryptocompare",
         "url":"https://www.cryptocompare.com/",
-        "type":"导航",
+        "type":"navigation",
         "desc":"多币种涨幅统计，市场分析"
     },
     {
         "name":"Sosobtc",
         "url":"https://www.sosobtc.com/",
-        "type":"导航",
+        "type":"navigation",
         "desc":"中文币圈门户网站"
     },
     {
         "name":"Btc123",
         "url":"https://www.btc123.com/",
-        "type":"导航",
+        "type":"navigation",
         "desc":"中文比特币导航网站"
     },
     {
@@ -262,20 +270,20 @@ var sites=[
     {
         "name":"litecoinlearner",
         "url":"http://www.litecoinlearner.com/",
-        "type":"官网",
+        "type":"official",
         "desc":"比特币和莱特币学习资源"
     },
 
     {
         "name":"btcchina",
         "url":"http://www.btcchina.com",
-        "type":"交易",
+        "type":"trade",
         "desc":"比特币中国"
     },
     {
         "name":"币行OKCoin",
         "url":"http://www.okcoin.com",
-        "type":"交易",
+        "type":"trade",
         "desc":"币行OKCoin"
     }
 ];

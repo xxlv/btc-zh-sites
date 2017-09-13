@@ -9,7 +9,7 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="icon" type="image/x-icon" href="./favicon.png">
+<link rel="icon" type="image/x-icon" href="./logo.png">
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -39,7 +39,6 @@
 
     *{
         font-family: 微软雅黑;
-
     }
     table{
         border: 0;
@@ -62,14 +61,37 @@
 </style>
 <body>
 <script type="text/javascript" src="./data.js"></script>
-<div id="app" class="center-block">
-    <div style="padding-left:10px">
-        <div class="title">
-            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
 
+
+<script type="text/javascript">
+
+    //根据sites聚合
+    var tags=new Set();
+
+    for(var site of sites){
+        tags.add(site.type);
+    }
+    $(document).ready(function(){
+        var tagElement=document.getElementById("mainTab");
+        for(var tag of tags){
+            var item=document.createElement("li");
+            item.innerHTML="<a href='#"+tag+"'>" + mapping.get(tag) +"</a>";
+            tagElement.appendChild(item);
+        }
+    });
+
+</script>
+<div id="app" class="center-block">
+    <a href="branding" href="http://www.btc-zh.com" title="BTC zh">
+        <img src="./logo.png">
+    </a>
+    <ul id="mainTab" class="nav nav-tabs"></ul>
+    <div style="padding-left:10px">
+        <div class="title" style="margin:10px 0px;">
+            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
             <span id="price">正在查询中...</span>
-            <h3 class="text-center" style="font-family:Comic Sans MS; "><span style="color:gray">BTC-ZH.COM</span>区块链相关网站汇总</h3>
         </div>
+    <div class="table">
         <table border="1" cellpadding="0"  cellspacing="0" id="sitemap" class="table">
         <tr>
         <th>名称</th>
@@ -77,15 +99,17 @@
         <th>类别</th>
         <th>描述</th>
         </tr>
-
         </table>
-
+        </div>
     </div>
-
 </div>
-<script type="text/javascript">
-var sitemapTable=document.getElementById("sitemap");
 
+
+<script type="text/javascript">
+//init blocks
+
+
+var sitemapTable=document.getElementById("sitemap");
 for(var site of sites){
       var tr=document.createElement("tr");
       var td1=document.createElement("td");
