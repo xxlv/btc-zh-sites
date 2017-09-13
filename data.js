@@ -1,5 +1,115 @@
 var sites=[
     {
+        "name":"btc-zh",
+        "url":"http://www.btc-zh.com",
+        "type":"汇总",
+        "desc":"<b>汇总区块链相关网站、定期更新、建议收藏</b>"
+    },
+    {
+        "name":"火币网",
+        "url":"http://www.huobi.com",
+        "type":"交易",
+        "desc":"比特币等多种币交易"
+    },
+    {
+        "name":"P网",
+        "url":"http://www.poloniex.com/",
+        "type":"交易",
+        "desc":"P网"
+    },
+
+    {
+        "name":"B网",
+        "url":"http://www.bittrex.com/",
+        "type":"交易",
+        "desc":"B网"
+    },
+    {
+        "name":"bitfinex",
+        "url":"http://www.bitfinex.com/",
+        "type":"交易",
+        "desc":"bitfinex"
+    },
+    {
+        "name":"bitmex",
+        "url":"http://www.bitmex.com/",
+        "type":"交易",
+        "desc":"期货"
+    },
+    {
+        "name":"e网",
+        "url":"http://www.btc-e.com/",
+        "type":"交易",
+        "desc":"e网"
+    },
+    {
+        "name":"K网",
+        "url":"http://www.kraken.com/",
+        "type":"交易",
+        "desc":"kraken"
+    },
+    {
+        "name":"gdax",
+        "url":"http://www.gdax.com/",
+        "type":"交易",
+        "desc":"gdax"
+    },
+    {
+        "name":"bitstamp",
+        "url":"http://www.bitstamp.com/",
+        "type":"交易",
+        "desc":"bitstamp"
+    },
+    {
+        "name":"gemini",
+        "url":"http://www.gemini.com/",
+        "type":"交易",
+        "desc":"gemini"
+    },
+    {
+        "name":"quoine",
+        "url":"http://www.quoine.com/",
+        "type":"交易",
+        "desc":"quoine"
+    },
+    {
+        "name":"yobit",
+        "url":"http://www.yobit.com/",
+        "type":"交易",
+        "desc":"yobit"
+    },
+    {
+        "name":"coincheck",
+        "url":"http://www.coincheck.com/",
+        "type":"交易",
+        "desc":"coincheck"
+    },
+    {
+        "name":"coinbase",
+        "url":"http://www.coinbase.com/",
+        "type":"交易",
+        "desc":"coinbase"
+    },
+    {
+        "name":"itbit",
+        "url":"http://www.itbit.com/",
+        "type":"交易",
+        "desc":"itbit"
+    },
+    {
+        "name":"localbitcoins",
+        "url":"http://www.localbitcoins.com/",
+        "type":"交易",
+        "desc":"全球最大的比特币场外交易场所"
+    },
+    {
+        "name":"bitkan",
+        "url":"http://www.bitkan.com/",
+        "type":"交易",
+        "desc":"国内场外交易"
+    },
+
+    {
         "name":"Coinmap",
         "url":"https://coinmap.org/",
         "type":"<b>统计</b>",
@@ -119,33 +229,33 @@ var sites=[
     {
         "name":"bitcoin",
         "url":"https://bitcoin.org/en/",
-        "type":"比特币",
+        "type":"BTC",
         "desc":"比特币的官方网站，可获取大量资源，包括Qt钱包软件、中本聪原始论文等。"
     },
     {
         "name":"Bitcoin wiki",
         "url":"https://en.bitcoin.it/wiki/Main_Page",
-        "type":"比特币",
+        "type":"BTC",
         "desc":"比特币的wiki页面"
     },
 
     {
         "name":"Coindesk",
         "url":"http://www.coindesk.com/",
-        "type":"比特币",
+        "type":"BTC",
         "desc":"英文，比特币及区块链相关新闻、比特币价格指数和相关研究报告。"
     },
     {
         "name":"巴比特",
         "url":"http://www.8btc.com/",
-        "type":"比特币",
+        "type":"BTC",
         "desc":"中国知名数字货币、区块链新闻网站、在线社区"
     },
 
     {
         "name":"币看",
         "url":"https://www.btckan.com/",
-        "type":"比特币",
+        "type":"BTC",
         "desc":"币看，数字货币资讯网站"
     },
 
@@ -167,108 +277,5 @@ var sites=[
         "url":"http://www.okcoin.com",
         "type":"交易",
         "desc":"币行OKCoin"
-    },
-    {
-        "name":"火币网",
-        "url":"http://www.www.huobi.com",
-        "type":"交易",
-        "desc":"比特币等多种币交易"
-    },
-    {
-        "name":"P网",
-        "url":"http://www.poloniex.com/",
-        "type":"交易",
-        "desc":"P网"
-    },
-
-    {
-        "name":"B网",
-        "url":"http://www.bittrex.com/",
-        "type":"交易",
-        "desc":"B网"
-    },
-    {
-        "name":"bitfinex",
-        "url":"http://www.bitfinex.com/",
-        "type":"交易",
-        "desc":"bitfinex"
-    },
-    {
-        "name":"bitmex",
-        "url":"http://www.bitmex.com/",
-        "type":"交易",
-        "desc":"期货"
-    },
-    {
-        "name":"e网",
-        "url":"http://www.btc-e.com/",
-        "type":"交易",
-        "desc":"e网"
-    },
-    {
-        "name":"K网",
-        "url":"http://www.kraken.com/",
-        "type":"交易",
-        "desc":"kraken"
-    },
-    {
-        "name":"gdax",
-        "url":"http://www.gdax.com/",
-        "type":"交易",
-        "desc":"gdax"
-    },
-    {
-        "name":"bitstamp",
-        "url":"http://www.bitstamp.com/",
-        "type":"交易",
-        "desc":"bitstamp"
-    },
-    {
-        "name":"gemini",
-        "url":"http://www.gemini.com/",
-        "type":"交易",
-        "desc":"gemini"
-    },
-    {
-        "name":"quoine",
-        "url":"http://www.quoine.com/",
-        "type":"交易",
-        "desc":"quoine"
-    },
-    {
-        "name":"yobit",
-        "url":"http://www.yobit.com/",
-        "type":"交易",
-        "desc":"yobit"
-    },
-    {
-        "name":"coincheck",
-        "url":"http://www.coincheck.com/",
-        "type":"交易",
-        "desc":"coincheck"
-    },
-    {
-        "name":"coinbase",
-        "url":"http://www.coinbase.com/",
-        "type":"交易",
-        "desc":"coinbase"
-    },
-    {
-        "name":"itbit",
-        "url":"http://www.itbit.com/",
-        "type":"交易",
-        "desc":"itbit"
-    },
-    {
-        "name":"localbitcoins",
-        "url":"http://www.localbitcoins.com/",
-        "type":"交易",
-        "desc":"全球最大的比特币场外交易场所"
-    },
-    {
-        "name":"bitkan",
-        "url":"http://www.bitkan.com/",
-        "type":"交易",
-        "desc":"国内场外交易"
     }
 ];

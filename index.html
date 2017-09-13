@@ -32,40 +32,44 @@
             document.getElementById("price").innerHTML="比特币实时价格: <span style='color:red'>"+price+"</span>￥";
         })
     },3000);
-
 </script>
-
 </head>
+
 <style media="screen">
+
     *{
         font-family: 微软雅黑;
+
+    }
+    table{
+        border: 0;
     }
     tr:hover{
         color: red;
-        background: #001;
+        border: 0;
     }
     #app{
-        width: 870px;
+        width: 940px;
+
     }
     td {
     padding-left: 15px;
+    }
+
+    .title {
+        margin-left: 13px;
     }
 </style>
 <body>
 <script type="text/javascript" src="./data.js"></script>
 <div id="app" class="center-block">
-
-
-    <div class="title">
-        <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-
-        <span id="price">正在查询中...</span>
-        <h3 class="text-center  style="font-family:Comic Sans MS; "><span style="color:gray">BTC-ZH.COM</span>区块链相关网站汇总</h3>
-    </div>
-
-
-
     <div style="padding-left:10px">
+        <div class="title">
+            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+
+            <span id="price">正在查询中...</span>
+            <h3 class="text-center" style="font-family:Comic Sans MS; "><span style="color:gray">BTC-ZH.COM</span>区块链相关网站汇总</h3>
+        </div>
         <table border="1" cellpadding="0"  cellspacing="0" id="sitemap" class="table">
         <tr>
         <th>名称</th>
@@ -101,7 +105,10 @@ for(var site of sites){
 </script>
 
 <footer class="text-center">
-    @copyright 2017-2099 btc-zh.com | 以上数据均来自网络，非商业用途，如有侵权，请通知删除
+    <hr/>
+    <P>以上数据均来自网络，非商业用途，如有侵权，请 <a href="mailto:lvxiang119@gmail.com">通知删除</a> </P>
+    <p>本站点托管至 <a href="https://github.com/xxlv/btc-zh-sites">github.com</a></p>
+    <P>Copyright © 2017 btc-zh.com . All Rights Reserved.</P>
 </footer>
 </body>
 </html>
