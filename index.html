@@ -18,6 +18,23 @@
   });
 </script>
 
+<script type="text/javascript">
+    var priceAPI="http://47.94.254.53?proxy=https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny";
+
+</script>
+
+<script type="text/javascript">
+    var price=0;
+    var loadPrice=window.setInterval(function(){
+        $.get(priceAPI,function(data){
+            data=JSON.parse(data);
+            price=data.ticker['buy']
+            document.getElementById("price").innerHTML="比特币实时价格: <span style='color:red'>"+price+"</span>￥";
+        })
+    },3000);
+
+</script>
+
 </head>
 <style media="screen">
     *{
@@ -37,7 +54,16 @@
 <body>
 <script type="text/javascript" src="./data.js"></script>
 <div id="app" class="center-block">
-    <h3 class="text-center" style="font-family:Comic Sans MS"><span style="color:gray">BTC-ZH.COM</span>区块链相关网站汇总</h3>
+
+
+    <div class="title">
+        <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+
+        <span id="price">正在查询中...</span>
+        <h3 class="text-center  style="font-family:Comic Sans MS; "><span style="color:gray">BTC-ZH.COM</span>区块链相关网站汇总</h3>
+    </div>
+
+
 
     <div style="padding-left:10px">
         <table border="1" cellpadding="0"  cellspacing="0" id="sitemap" class="table">
