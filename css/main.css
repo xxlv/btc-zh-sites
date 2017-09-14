@@ -1,0 +1,31 @@
+*{
+    font-family: 微软雅黑;
+}
+#last_modity_time{
+    color: gray;
+}
+table{
+    border: 0;
+}
+tr:hover{
+    color: red;
+    border: 0;
+}
+#app{
+    width: 900px;
+    margin: auto;
+
+}
+td {
+padding-left: 15px;
+}
+
+.title {
+    margin-left: 13px;
+}
+@media only screen and (max-device-width: 720px),
+                   only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 720px) {
+    #app {
+        width: 100%;
+    }
+}

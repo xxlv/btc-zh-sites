@@ -23,7 +23,6 @@
     var priceAPI="http://47.94.254.53?proxy=https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny";
     var price=0;
     var loadPrice=window.setInterval(function(){
-
         $.get(priceAPI,function(data){
             data=JSON.parse(data);
             price=data.ticker['buy']
@@ -36,45 +35,12 @@
     });
 
 </script>
-<style media="screen">
-    *{
-        font-family: 微软雅黑;
-    }
-    #last_modity_time{
-        color: gray;
-    }
-    table{
-        border: 0;
-    }
-    tr:hover{
-        color: red;
-        border: 0;
-    }
-    #app{
-        width: 900px;
-        margin: auto;
-
-    }
-    td {
-    padding-left: 15px;
-    }
-
-    .title {
-        margin-left: 13px;
-    }
-    @media only screen and (max-device-width: 720px),
-                       only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 720px) {
-        #app {
-            width: 100%;
-        }
-    }
-</style>
-
+<link rel="stylesheet" href="./css/main.css">
 </head>
 
 
 <body>
-<script type="text/javascript" src="./data.js"></script>
+<script type="text/javascript" src="./js/data.js"></script>
 <script type="text/javascript">
     //根据sites聚合
     var tags=new Set();
@@ -140,7 +106,6 @@
     }
 
     });
-
 </script>
 <script>
 	$(function () {
