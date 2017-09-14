@@ -18,10 +18,9 @@
     enable_page_level_ads: true
   });
 </script>
+
 <script type="text/javascript">
     var priceAPI="http://47.94.254.53?proxy=https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny";
-</script>
-<script type="text/javascript">
     var price=0;
     var loadPrice=window.setInterval(function(){
 
@@ -32,14 +31,11 @@
         })
     },3000);
     $.get("http://www.btc-zh.com/lastModify.json",function(data){
-        // data=JSON.parse(data)
         lastModifyTime=data.last_modity_time;
         document.getElementById("last_modity_time").innerHTML="<span style='color:red'>"+new Date(parseInt(lastModifyTime)).toLocaleString()+"</span>";
     });
 
 </script>
-</head>
-
 <style media="screen">
     *{
         font-family: 微软雅黑;
@@ -73,34 +69,87 @@
         }
     }
 </style>
+
+</head>
+
+
 <body>
 <script type="text/javascript" src="./data.js"></script>
-
-
 <script type="text/javascript">
-
     //根据sites聚合
     var tags=new Set();
-
     for(var site of sites){
         tags.add(site.type);
     }
     $(document).ready(function(){
         var tagElement=document.getElementById("mainTab");
+        var tableBlock=document.getElementById("table");
+
         for(var tag of tags){
             var item=document.createElement("li");
-            item.innerHTML="<a href='#"+tag+"'>" + mapping.get(tag) +"</a>";
+            item.innerHTML="<a href='#"+tag+"' tabindex='-1' data-toggle='tab' >" + mapping.get(tag) +"</a>";
             tagElement.appendChild(item);
+
+            //create table
+            var sitemapTable=document.createElement("table");
+            sitemapTable.setAttribute("id",tag);
+            sitemapTable.setAttribute("class","table tab-pane");
+            sitemapTable.setAttribute("border","1");
+            sitemapTable.setAttribute("cellpadding","0");
+            sitemapTable.setAttribute("cellspacing","0");
+            var tr=document.createElement("tr");
+            var td1=document.createElement("th");
+            var td2=document.createElement("th");
+            var td3=document.createElement("th");
+            var td4=document.createElement("th")
+            ;
+            td3.className="hidden-xs hidden-s";
+            td4.className="hidden-xs hidden-s";
+            td1.innerHTML="站点名称";
+            td2.innerHTML="URL";
+            td3.innerHTML="类型";
+            td4.innerHTML="描述";
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            sitemapTable.appendChild(tr);
+
+            for(var site of sites){
+                if(site.type!=tag){
+                    continue;
+                }
+                var tr=document.createElement("tr");
+                var td1=document.createElement("td");
+                var td2=document.createElement("td");
+                var td3=document.createElement("td");
+                var td4=document.createElement("td");
+                td3.className="hidden-xs hidden-s";
+                td4.className="hidden-xs hidden-s";
+                td1.innerHTML=site.name;
+                td2.innerHTML="<a href='"+site.url+"'  target='_blank'>"+site.url+"</a>";
+                td3.innerHTML=site.type;
+                td4.innerHTML=site.desc;
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                sitemapTable.appendChild(tr);
         }
+        tableBlock.appendChild(sitemapTable);
+    }
+
     });
 
 </script>
-
+<script>
+	$(function () {
+		$('#mainTab li:eq(1) a').tab('show');
+	});
+</script>
 <a href="https://github.com/xxlv/btc-zh-sites" style="width:100%">
     <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
 </a>
-
-
 <div id="app" class="center-block">
     <div class="header container">
         <div class="row">
@@ -123,47 +172,9 @@
             <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
             <span id="price">正在查询中...</span>
         </div>
-    <div class="table">
-        <table border="1" cellpadding="0"  cellspacing="0" id="sitemap" class="table">
-        <tr>
-        <th>名称</th>
-        <th>站点URL</th>
-        <th class="hidden-xs hidden-s">类别</th>
-        <th class="hidden-xs hidden-s">描述</th>
-        </tr>
-        </table>
-        </div>
+        <div class="table tab-content" id="table"></div>
     </div>
 </div>
-
-
-<script type="text/javascript">
-//init blocks
-
-
-var sitemapTable=document.getElementById("sitemap");
-for(var site of sites){
-      var tr=document.createElement("tr");
-      var td1=document.createElement("td");
-      var td2=document.createElement("td");
-      var td3=document.createElement("td");
-      var td4=document.createElement("td");
-
-      td3.className="hidden-xs hidden-s";
-      td4.className="hidden-xs hidden-s";
-
-      td1.innerHTML=site.name;
-      td2.innerHTML="<a href='"+site.url+"'  target='_blank'>"+site.url+"</a>";
-      td3.innerHTML=site.type;
-      td4.innerHTML=site.desc;
-      tr.appendChild(td1);
-      tr.appendChild(td2);
-      tr.appendChild(td3);
-      tr.appendChild(td4);
-      sitemapTable.appendChild(tr);
-}
-</script>
-
 <footer class="text-center">
     <hr/>
     <P>以上数据均来自网络，非商业用途，如有侵权，请 <a href="mailto:lvxiang119@gmail.com">通知删除</a> </P>

@@ -1,11 +1,12 @@
+// @license btc-zh.com
+// @description sites list
 var mapping=new Map();
-
-// 定义分类
 mapping.set("navigation","导航");
 mapping.set("trade","交易");
 mapping.set("statistics","统计");
 mapping.set("BTC","比特币");
 mapping.set("official","官网站点");
+mapping.set("wallet","钱包");
 
 var sites=[
     {
@@ -116,6 +117,58 @@ var sites=[
         "url":"http://www.bitkan.com/",
         "type":"trade",
         "desc":"国内场外交易"
+    },
+
+    {
+        "name":"bixin",
+        "url":"https://bixin.com/",
+        "type":"wallet",
+        "desc":"钱包、区块浏览"
+    },
+
+    {
+        "name":"okcoin",
+        "url":"https://w.okcoin.cn/",
+        "type":"wallet",
+        "desc":"钱包"
+    },
+    {
+        "name":"oklink",
+        "url":"https://www.oklink.com/",
+        "type":"wallet",
+        "desc":"跨境支付与转账"
+    },
+
+    {
+        "name":"极付",
+        "url":"https://pay.btcc.com/",
+        "type":"wallet",
+        "desc":"极付"
+    },
+
+    {
+        "name":"Multibit",
+        "url":"https://multibit.org/",
+        "type":"wallet",
+        "desc":"Multibit"
+    },
+    {
+        "name":"Bitpay",
+        "url":"https://bitpay.com/",
+        "type":"wallet",
+        "desc":"Bitpay"
+    },
+    {
+        "name":"Circle",
+        "url":"https://www.circle.com/en",
+        "type":"wallet",
+        "desc":"比特币支付与交易所企业，有钱包业务"
+    },
+    {
+        "name":"coinatmradar",
+        "url":"https://coinatmradar.com/",
+        "type":"wallet",
+        "desc":"全球比特币ATM机分布图"
     },
 
     {
