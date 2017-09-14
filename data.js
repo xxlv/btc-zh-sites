@@ -1,10 +1,11 @@
 var mapping=new Map();
+
+// 定义分类
 mapping.set("navigation","导航");
 mapping.set("trade","交易");
 mapping.set("statistics","统计");
 mapping.set("BTC","比特币");
 mapping.set("official","官网站点");
-
 
 var sites=[
     {

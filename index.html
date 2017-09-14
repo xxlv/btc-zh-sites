@@ -55,7 +55,8 @@
         border: 0;
     }
     #app{
-        width: 940px;
+        width: 900px;
+        margin: auto;
 
     }
     td {
@@ -64,6 +65,12 @@
 
     .title {
         margin-left: 13px;
+    }
+    @media only screen and (max-device-width: 720px),
+                       only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 720px) {
+        #app {
+            width: 100%;
+        }
     }
 </style>
 <body>
@@ -121,8 +128,8 @@
         <tr>
         <th>名称</th>
         <th>站点URL</th>
-        <th>类别</th>
-        <th>描述</th>
+        <th class="hidden-xs hidden-s">类别</th>
+        <th class="hidden-xs hidden-s">描述</th>
         </tr>
         </table>
         </div>
@@ -141,6 +148,10 @@ for(var site of sites){
       var td2=document.createElement("td");
       var td3=document.createElement("td");
       var td4=document.createElement("td");
+
+      td3.className="hidden-xs hidden-s";
+      td4.className="hidden-xs hidden-s";
+
       td1.innerHTML=site.name;
       td2.innerHTML="<a href='"+site.url+"'  target='_blank'>"+site.url+"</a>";
       td3.innerHTML=site.type;
