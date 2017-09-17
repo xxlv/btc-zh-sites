@@ -22,14 +22,32 @@
 
 <script type="text/javascript">
     var priceAPI="http://47.94.254.53?proxy=https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny";
+    var totalAPI="http://47.94.254.53?action=load_total"
+
     var price=0;
+
+    // 载入价格
     var loadPrice=window.setInterval(function(){
         $.get(priceAPI,function(data){
             data=JSON.parse(data);
             price=data.ticker['buy']
             document.getElementById("price").innerHTML="比特币实时价格: <span style='color:red'>"+price+"</span>￥";
+
         })
+        $.get(totalAPI,function(data){
+            if(data){
+                data=JSON.parse(data);
+                var total=data.total
+                document.getElementById("total_v_nu").innerHTML="<span style='color:red'>"+total+"</span>";
+            }
+
+        })
+
+
+
+
     },3000);
+
     $.get("http://www.btc-zh.com/lastModify.json",function(data){
         lastModifyTime=data.last_modity_time;
         document.getElementById("last_modity_time").innerHTML="<span style='color:red'>"+new Date(parseInt(lastModifyTime)).toLocaleString()+"</span>";
@@ -59,7 +77,7 @@
             //create table
             var sitemapTable=document.createElement("table");
             sitemapTable.setAttribute("id",tag);
-            sitemapTable.setAttribute("class","table tab-pane");
+            sitemapTable.setAttribute("class","table tab-pane fade");
             sitemapTable.setAttribute("border","1");
             sitemapTable.setAttribute("cellpadding","0");
             sitemapTable.setAttribute("cellspacing","0");
@@ -115,12 +133,16 @@
 
 
 <div id="app" class="center-block">
+    <!-- github don't del this line  -->
     <a href="https://github.com/xxlv/btc-zh-sites" style="width:100%">
         <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
     </a>
+
     <div class="alert alert-warning">
         近期关注：<span>比特币中国交易所被关停,但未宣布比特币非法</span>
     </div>
+
+
     <div class="header container">
         <div class="row">
             <div class="col-md-2">
@@ -131,21 +153,22 @@
             <div class="col-md-10">
                 <h3>更丰富的页面即将展现！</h3>
                 <small>机器人Candy自动抓取，上次修改时间: <span id="last_modity_time">暂未查询到此信息</span></small>
+                <br/>
+                <small>累计访问人次: <span id="total_v_nu">0 人</span></small>
             </div>
-
         </div>
 
     </div>
-    <ul id="mainTab" class="nav nav-tabs"></ul>
+    <nav class="navbar">
+        <ul id="mainTab" class="nav nav-tabs "></ul>
+    </nav>
     <div style="padding-left:10px">
         <div class="title" style="margin:10px 0px;"  data-toggle="tooltip" title="数据来自www.okcoin.cn" >
             <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-            <span id="price">正在查询中...</span>
+                <span id="price">正在查询中...</span>
         </div>
         <div class="table tab-content" id="table"></div>
     </div>
-
-
 </div>
 <footer class="text-center">
     <hr/>

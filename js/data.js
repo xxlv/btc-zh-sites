@@ -9,11 +9,44 @@ mapping.set("official","官网");
 mapping.set("wallet","钱包");
 
 var sites=[
+
+
     {
         "name":"btc-zh",
         "url":"http://www.btc-zh.com",
         "type":"navigation",
         "desc":"<b>汇总区块链相关网站、定期更新、建议收藏</b>"
+    },
+    {
+        "name":"bitcoin",
+        "url":"https://bitcoin.org",
+        "type":"official",
+        "desc":"比特币官网网站"
+    },
+    {
+        "name":"ethereum",
+        "url":"https://www.ethereum.org/",
+        "type":"official",
+        "desc":"<span style='color:blue;'>以太坊官网，用以构建智能合约的软件平台&#128512;</span>  &nbsp;"
+    },
+    {
+        "name":"litecoin",
+        "url":"https://litecoin.org/",
+        "type":"official",
+        "desc":"莱特币官网"
+    },
+    {
+        "name":"dogecoin",
+        "url":"http://dogecoin.com/",
+        "type":"official",
+        "desc":"狗狗币官网（主要用以小额赞赏）"
+    },
+
+    {
+        "name":"litecoinlearner",
+        "url":"http://www.litecoinlearner.com/",
+        "type":"official",
+        "desc":"比特币和莱特币学习资源"
     },
     {
         "name":"火币网",
@@ -319,37 +352,6 @@ var sites=[
         "url":"https://www.btckan.com/",
         "type":"BTC",
         "desc":"币看，数字货币资讯网站"
-    },
-
-    {
-        "name":"litecoinlearner",
-        "url":"http://www.litecoinlearner.com/",
-        "type":"official",
-        "desc":"比特币和莱特币学习资源"
-    },
-    {
-        "name":"ethereum",
-        "url":"https://www.ethereum.org/",
-        "type":"official",
-        "desc":"以太坊官网"
-    },
-    {
-        "name":"litecoin",
-        "url":"https://litecoin.org/",
-        "type":"official",
-        "desc":"莱特币官网"
-    },
-    {
-        "name":"dogecoin",
-        "url":"http://dogecoin.com/",
-        "type":"official",
-        "desc":"狗狗币官网（主要用以小额赞赏）"
-    },
-    {
-        "name":"bitcoin",
-        "url":"https://bitcoin.org",
-        "type":"official",
-        "desc":"比特币官网网站"
     },
     {
         "name":"btcchina",
