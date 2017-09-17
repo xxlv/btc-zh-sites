@@ -327,7 +327,30 @@ var sites=[
         "type":"official",
         "desc":"比特币和莱特币学习资源"
     },
-
+    {
+        "name":"ethereum",
+        "url":"https://www.ethereum.org/",
+        "type":"official",
+        "desc":"以太坊官网"
+    },
+    {
+        "name":"litecoin",
+        "url":"https://litecoin.org/",
+        "type":"official",
+        "desc":"莱特币官网"
+    },
+    {
+        "name":"dogecoin",
+        "url":"http://dogecoin.com/",
+        "type":"official",
+        "desc":"狗狗币官网（主要用以小额赞赏）"
+    },
+    {
+        "name":"bitcoin",
+        "url":"https://bitcoin.org",
+        "type":"official",
+        "desc":"比特币官网网站"
+    },
     {
         "name":"btcchina",
         "url":"http://www.btcchina.com",
